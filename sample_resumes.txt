@@ -1,0 +1,8 @@
+Candidate A
+Python developer with experience building automation scripts, REST API integrations, data cleaning, and a Streamlit dashboard. Interested in AI tools and recruitment workflow automation.
+
+Candidate B
+Frontend developer skilled in HTML, CSS, JavaScript, responsive design, and UI testing. Built portfolio websites and landing pages.
+
+Candidate C
+Computer science student with Python, machine learning, NLP basics, Git, API integration, and a project that ranks resumes against job descriptions. Explored Claude and workflow automation concepts.

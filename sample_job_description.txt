@@ -1,0 +1,2 @@
+AI Intern — Recruitment Workflow Automation
+Skills of interest: Python, AI/NLP fundamentals, APIs, Claude or other AI tools, workflow automation tools such as n8n/Make/Zapier, problem-solving, and interest in improving recruitment workflows.
