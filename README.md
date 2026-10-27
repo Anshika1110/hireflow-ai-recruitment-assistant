@@ -1,54 +1,75 @@
-# HireFlow AI — Recruitment Screening Assistant
+# HireFlow AI - Recruitment Screening Assistant
 
-A small, runnable AI-assisted recruitment workflow demo. It compares a job description with candidate resume text, ranks candidates using TF-IDF cosine similarity, shows overlapping/missing terms for recruiter review, and exports a CSV report.
+## About the Project
 
-## Features
-- Job description input
-- Candidate resume text input
-- Resume-to-job text similarity ranking
-- Matched terms and terms to verify
-- CSV export
-- Local processing: resume text is not sent to an external AI API
-- Human-in-the-loop and responsible-use reminders
+I made this project to explore how AI and automation can be used in the recruitment process. Usually, recruiters have to go through multiple resumes to find candidates whose skills match a job description. I wanted to make a simple application that could help with the initial screening process.
 
-## Tech stack
-- Python
-- Streamlit (interactive web UI)
-- scikit-learn (TF-IDF vectorization and cosine similarity)
-- Regular expressions (simple keyword extraction)
-- Git/GitHub (version control and project sharing)
+The application compares a job description with different resumes and shows which resumes have more text in common with the job requirements. It also displays matching keywords and lets the user download the results as a CSV file.
 
-## AI / automation tools
-- **Implemented AI/NLP method:** TF-IDF text vectorization with cosine similarity for candidate-to-job-description matching.
-- **Workflow automation:** the “Run screening workflow” action performs comparison, ranking, evidence display, and report generation in one flow.
-- **Claude:** Claude can be used as a development assistant to brainstorm, review, and improve the workflow. This repository does not claim a live Claude API integration.
+## What does it do?
 
-## Run locally
-1. Install Python 3.10 or newer.
-2. Open a terminal in this project folder.
-3. Create and activate a virtual environment (optional but recommended).
-4. Install dependencies:
+* Takes a job description as input.
+* Allows users to enter candidate resume details.
+* Compares resumes with the job description.
+* Shows a match score for each candidate.
+* Displays matching keywords and skills that may need further checking.
+* Ranks candidates based on their text similarity scores.
+* Generates a CSV report that can be downloaded.
+
+## Technologies Used
+
+* **Python** - Main programming language.
+* **Streamlit** - Used to create the web application.
+* **scikit-learn** - Used for text processing and similarity calculation.
+* **TF-IDF and Cosine Similarity** - Used to compare resumes with the job description.
+* **Git and GitHub** - Used to manage and share the project.
+
+## How does it work?
+
+First, the user enters a job description and the resumes they want to compare.
+
+The application converts the text into numerical features using TF-IDF. It then uses cosine similarity to calculate how similar each resume is to the job description.
+
+After that, it displays the scores, matching keywords, and terms that may need to be checked by the recruiter. The results can also be downloaded as a CSV file.
+
+I used sample resumes in the application so that its working can be tested easily.
+
+## How to Run the Project
+
+1. Install Python on your computer.
+
+2. Download or clone this repository.
+
+3. Open the project folder in VS Code.
+
+4. Open the terminal and install the required libraries:
+
    ```bash
    pip install -r requirements.txt
    ```
-5. Start the app:
+
+5. Run the application:
+
    ```bash
    streamlit run app.py
    ```
-6. Open the local URL printed in the terminal, usually `http://localhost:8501`.
 
-## Quick demo
-The app includes sample job-description and resume text. Click **Run screening workflow** to see the ranking and export a CSV. Replace the examples with fictional or consented candidate data for a demo.
+6. Open the local address displayed in the terminal.
 
-## Limitations and responsible use
-- Similarity scores are not probabilities of success and do not measure a person's overall ability.
-- Keyword overlap can miss equivalent skills and context.
-- Do not use demographic, protected, or irrelevant personal information to rank candidates.
-- Keep a human recruiter responsible for decisions; validate results consistently.
-- This is a portfolio prototype, not a production-ready hiring platform. Production use would require security, access controls, privacy review, evaluation, monitoring, and integration testing.
+## AI and Automation
 
-## Possible next steps
-- Parse uploaded PDF/DOCX resumes
-- Add a real Claude API integration with secure server-side secrets and explicit consent
-- Connect an n8n/Make workflow through a webhook
-- Add authentication, audit logs, tests, and deployment
+The project uses basic NLP techniques to compare resumes and job descriptions. The screening workflow runs with one button click and automatically calculates scores, ranks the resumes, displays keyword matches, and creates a downloadable report.
+
+I built this as a small project to understand how AI-based text analysis can be used in a real-world recruitment workflow.
+
+## Limitations
+
+This is a basic project, so there is still room for improvement. The scores are based on text similarity and do not necessarily indicate whether someone is suitable for a job. The results should only help with initial screening, and the final decision should always be made by a recruiter.
+
+## Future Improvements
+
+* Allow users to upload PDF resumes directly.
+* Explore integration with Claude for resume analysis.
+* Connect the application with an automation tool such as n8n.
+* Improve the matching logic to understand skills and experience in more detail.
+* Add more testing and features to make the application more reliable.
